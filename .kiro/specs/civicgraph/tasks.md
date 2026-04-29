@@ -29,7 +29,7 @@ See docs/architecture.md and docs/api-contract.md for technical contracts.
   - **Bedrock smoke test:** Verify `us.anthropic.claude-sonnet-4-6` is callable from Lambda execution role before full deploy
   - **Done when:** (1) `curl <api-url>/api/top` returns valid TopResponse with 20 entries; (2) `curl <api-url>/api/person/<id>` returns PersonDetailResponse including a non-empty `narrative` string; (3) Bedrock smoke test passes; (4) API Gateway base URL committed to `infra/provisioning-status.md`
 
-- [ ] A-DEPLOY-WEB: Deploy apps/web/ to AWS Amplify Hosting in us-west-2
+- [~] A-DEPLOY-WEB: Deploy apps/web/ to AWS Amplify Hosting in us-west-2 <!-- claimed by Kiro-CLI-RDP-Amplify at 2026-04-29T15:39:00Z -->
   - Create an Amplify app pointed at GitHub repo `mindmodelai/CivicGraph-ottawa2026`, branch `main`, monorepo path `apps/web`
   - Build settings: Next.js 14 App Router, Node 20, default amplify.yml (or write one if needed)
   - Set environment variable `NEXT_PUBLIC_API_URL` initially to empty (frontend falls back to mocks)
