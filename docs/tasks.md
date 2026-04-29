@@ -2,9 +2,9 @@
 
 Three agents, one repo. Each agent reads `docs/architecture.md` and `docs/api-contract.md` before starting.
 
-- **Agent A** = Kiro on RDP Ubuntu (AWS infra, backend, data scripts, deploys)
-- **Agent B** = Claude Code on Windows laptop (frontend)
-- **Agent C** = Kiro CLI on Windows laptop (data exploration, findings)
+- **Agent A** = Kiro CLI on RDP Ubuntu (AWS infra, backend, data scripts, deploys)
+- **Agent B** = Kiro CLI on Windows laptop (frontend)
+- **Agent C** = Claude Code on Windows laptop (data exploration, findings, orchestration)
 
 Sync: `git pull --rebase` before edit, commit-push after. Prefix: `feat(api):`, `feat(web):`, `feat(data):`, `feat(infra):`, `docs:`.
 
