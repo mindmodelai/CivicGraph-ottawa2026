@@ -1,25 +1,185 @@
 {
   "results": [
-    { "id": "p_001", "name": "Jane Doe", "province": "ON", "boards": 4, "totalFunding": 14237891, "compositeScore": 28.46 },
-    { "id": "p_002", "name": "John Smith", "province": "AB", "boards": 3, "totalFunding": 8120500, "compositeScore": 19.38 },
-    { "id": "p_003", "name": "Victoria Nalugwa", "province": "ON", "boards": 55, "totalFunding": 103575, "compositeScore": 275.84 },
-    { "id": "p_004", "name": "Gary Franken", "province": "BC", "boards": 43, "totalFunding": 15136240, "compositeScore": 308.74 },
-    { "id": "p_005", "name": "Paul Terrio", "province": "QC", "boards": 42, "totalFunding": 1265474, "compositeScore": 256.29 },
-    { "id": "p_006", "name": "Mikael Bingham", "province": "AB", "boards": 38, "totalFunding": 442316, "compositeScore": 214.54 },
-    { "id": "p_007", "name": "Sheila Britton", "province": "ON", "boards": 45, "totalFunding": 320000, "compositeScore": 247.50 },
-    { "id": "p_008", "name": "Melissa Cooke", "province": "BC", "boards": 32, "totalFunding": 127406658, "compositeScore": 259.37 },
-    { "id": "p_009", "name": "Brian MacDougall", "province": "NS", "boards": 33, "totalFunding": 89000000, "compositeScore": 262.10 },
-    { "id": "p_010", "name": "Janice Atwal", "province": "BC", "boards": 42, "totalFunding": 1265474, "compositeScore": 256.29 },
-    { "id": "p_011", "name": "Glenda Yeates", "province": "AB", "boards": 3, "totalFunding": 88532237487, "compositeScore": 32.73 },
-    { "id": "p_012", "name": "Jack Mintz", "province": "AB", "boards": 5, "totalFunding": 83448343891, "compositeScore": 54.55 },
-    { "id": "p_013", "name": "Jeff Potts", "province": "ON", "boards": 31, "totalFunding": 89564143, "compositeScore": 246.52 },
-    { "id": "p_014", "name": "Roger Dufresne", "province": "QC", "boards": 25, "totalFunding": 312762516, "compositeScore": 212.38 },
-    { "id": "p_015", "name": "Keith Richter", "province": "AB", "boards": 27, "totalFunding": 75680260, "compositeScore": 212.73 },
-    { "id": "p_016", "name": "Gary Hodder", "province": "NL", "boards": 28, "totalFunding": 75680260, "compositeScore": 220.61 },
-    { "id": "p_017", "name": "Wayne Williams", "province": "ON", "boards": 34, "totalFunding": 120630599, "compositeScore": 274.77 },
-    { "id": "p_018", "name": "Angela Fong", "province": "AB", "boards": 4, "totalFunding": 84838185791, "compositeScore": 43.68 },
-    { "id": "p_019", "name": "Trevor Young", "province": "ON", "boards": 15, "totalFunding": 30343217806, "compositeScore": 157.05 },
-    { "id": "p_020", "name": "Patricia Houston", "province": "ON", "boards": 8, "totalFunding": 24448068133, "compositeScore": 83.04 }
+    {
+      "id": "p_grh_concentrated",
+      "name": "Gagnon, Ron",
+      "province": "ON",
+      "boards": 1,
+      "totalFunding": 2130339000,
+      "compositeScore": 9.33,
+      "confidence": 1.0
+    },
+    {
+      "id": "p_yeates_glenda",
+      "name": "Yeates, Glenda",
+      "province": "ON",
+      "boards": 3,
+      "totalFunding": 88500000000,
+      "compositeScore": 32.84,
+      "confidence": 0.95
+    },
+    {
+      "id": "p_fong_angela",
+      "name": "Fong, Angela",
+      "province": "AB",
+      "boards": 4,
+      "totalFunding": 84800000000,
+      "compositeScore": 43.71,
+      "confidence": 0.90
+    },
+    {
+      "id": "p_mintz_jack",
+      "name": "Mintz, Jack",
+      "province": "AB",
+      "boards": 5,
+      "totalFunding": 83400000000,
+      "compositeScore": 54.56,
+      "confidence": 0.92
+    },
+    {
+      "id": "p_franken_gary",
+      "name": "Franken, Gary",
+      "province": "ON",
+      "boards": 43,
+      "totalFunding": 15100000,
+      "compositeScore": 308.74,
+      "confidence": 0.88
+    },
+    {
+      "id": "p_terrio_paul",
+      "name": "Terrio, Paul",
+      "province": "QC",
+      "boards": 42,
+      "totalFunding": 1300000,
+      "compositeScore": 256.29,
+      "confidence": 0.90
+    },
+    {
+      "id": "p_nalugwa_victoria",
+      "name": "Nalugwa, Victoria",
+      "province": "BC",
+      "boards": 55,
+      "totalFunding": 103575,
+      "compositeScore": 275.95,
+      "confidence": 0.95
+    },
+    {
+      "id": "p_britton_sheila",
+      "name": "Britton, Sheila",
+      "province": "ON",
+      "boards": 45,
+      "totalFunding": 287000,
+      "compositeScore": 245.36,
+      "confidence": 0.91
+    },
+    {
+      "id": "p_bingham_mikael",
+      "name": "Bingham, Mikael",
+      "province": "AB",
+      "boards": 38,
+      "totalFunding": 442000,
+      "compositeScore": 214.54,
+      "confidence": 0.93
+    },
+    {
+      "id": "p_murray_doug",
+      "name": "Murray, Doug",
+      "province": "ON",
+      "boards": 1,
+      "totalFunding": 2130339000,
+      "compositeScore": 9.33,
+      "confidence": 1.0
+    },
+    {
+      "id": "p_leclerc_diane",
+      "name": "Leclerc, Diane",
+      "province": "QC",
+      "boards": 12,
+      "totalFunding": 45200000,
+      "compositeScore": 91.87,
+      "confidence": 0.85
+    },
+    {
+      "id": "p_wong_kevin",
+      "name": "Wong, Kevin",
+      "province": "BC",
+      "boards": 8,
+      "totalFunding": 92000000,
+      "compositeScore": 63.68,
+      "confidence": 0.82
+    },
+    {
+      "id": "p_macneil_james",
+      "name": "MacNeil, James",
+      "province": "NS",
+      "boards": 6,
+      "totalFunding": 876000000,
+      "compositeScore": 53.69,
+      "confidence": 0.87
+    },
+    {
+      "id": "p_reddy_sunita",
+      "name": "Reddy, Sunita",
+      "province": "ON",
+      "boards": 22,
+      "totalFunding": 8700000,
+      "compositeScore": 152.71,
+      "confidence": 0.89
+    },
+    {
+      "id": "p_okafor_chidi",
+      "name": "Okafor, Chidi",
+      "province": "AB",
+      "boards": 18,
+      "totalFunding": 12400000,
+      "compositeScore": 127.53,
+      "confidence": 0.86
+    },
+    {
+      "id": "p_larsen_kristin",
+      "name": "Larsen, Kristin",
+      "province": "BC",
+      "boards": 15,
+      "totalFunding": 5600000,
+      "compositeScore": 101.26,
+      "confidence": 0.84
+    },
+    {
+      "id": "p_beaulieu_marc",
+      "name": "Beaulieu, Marc",
+      "province": "QC",
+      "boards": 28,
+      "totalFunding": 3200000,
+      "compositeScore": 181.94,
+      "confidence": 0.88
+    },
+    {
+      "id": "p_henderson_patricia",
+      "name": "Henderson, Patricia",
+      "province": "ON",
+      "boards": 14,
+      "totalFunding": 67000000,
+      "compositeScore": 109.52,
+      "confidence": 0.83
+    },
+    {
+      "id": "p_gill_harpreet",
+      "name": "Gill, Harpreet",
+      "province": "BC",
+      "boards": 19,
+      "totalFunding": 4100000,
+      "compositeScore": 125.58,
+      "confidence": 0.87
+    },
+    {
+      "id": "p_campbell_robert",
+      "name": "Campbell, Robert",
+      "province": "NS",
+      "boards": 9,
+      "totalFunding": 234000000,
+      "compositeScore": 75.22,
+      "confidence": 0.80
+    }
   ],
-  "generatedAt": "2026-04-29T11:30:00Z"
+  "generatedAt": "2026-04-29T15:00:00Z"
 }
