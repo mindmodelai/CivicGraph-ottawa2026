@@ -1,0 +1,58 @@
+{
+  "person": {
+    "id": "p_002",
+    "name": "Yeates, Glenda",
+    "province": "ON",
+    "boards": 3,
+    "totalFunding": 88532237487
+  },
+  "graph": {
+    "nodes": [
+      { "id": "p_yeates_glenda", "label": "Yeates, Glenda", "type": "person", "province": "ON" },
+      { "id": "o_118838937", "label": "Carleton University", "type": "org", "size": 1171143500, "province": "ON" },
+      { "id": "o_124072513", "label": "Government of the Province of Alberta", "type": "org", "size": 80841165000, "province": "AB" },
+      { "id": "o_870157641", "label": "Canadian Blood Services", "type": "org", "size": 6522042313, "province": "ON" },
+      { "id": "g_fed", "label": "Federal Government", "type": "gov", "jurisdiction": "federal" },
+      { "id": "g_prov_on", "label": "Province of Ontario", "type": "gov", "jurisdiction": "provincial" },
+      { "id": "g_prov_ab", "label": "Province of Alberta", "type": "gov", "jurisdiction": "provincial" }
+    ],
+    "edges": [
+      { "source": "p_yeates_glenda", "target": "o_118838937", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=118838937RR0001&dsrdPg=1" },
+      { "source": "p_yeates_glenda", "target": "o_124072513", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=124072513RR0001&dsrdPg=1" },
+      { "source": "p_yeates_glenda", "target": "o_870157641", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=870157641RR0001&dsrdPg=1" },
+      { "source": "g_fed", "target": "o_118838937", "edgeType": "FUNDED", "amount": 252452382, "program": "Various federal research grants", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=118838937RR0001&dsrdPg=1" },
+      { "source": "g_prov_on", "target": "o_118838937", "edgeType": "FUNDED", "amount": 916577792, "program": "Provincial operating grants" },
+      { "source": "g_fed", "target": "o_124072513", "edgeType": "FUNDED", "amount": 253433000, "program": "Federal transfers" },
+      { "source": "g_prov_ab", "target": "o_124072513", "edgeType": "FUNDED", "amount": 80587732000, "program": "Provincial consolidated revenue" },
+      { "source": "g_fed", "target": "o_870157641", "edgeType": "FUNDED", "amount": 66750007, "program": "Federal health transfers" },
+      { "source": "g_prov_on", "target": "o_870157641", "edgeType": "FUNDED", "amount": 6455292306, "program": "Provincial health funding" }
+    ]
+  },
+  "provenance": [
+    {
+      "id": "cra_118838937_t3010",
+      "type": "cra_t3010",
+      "description": "Carleton University T3010 — $252M federal + $917M provincial funding; Glenda Yeates listed as director",
+      "url": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=118838937RR0001&dsrdPg=1",
+      "fiscalYear": 2023,
+      "amount": 1171143500
+    },
+    {
+      "id": "cra_124072513_t3010",
+      "type": "cra_t3010",
+      "description": "Government of the Province of Alberta CRA registration — $80.8B in reported provincial funding (inter-governmental transfers)",
+      "url": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=124072513RR0001&dsrdPg=1",
+      "fiscalYear": 2023,
+      "amount": 80841165000
+    },
+    {
+      "id": "cra_870157641_t3010",
+      "type": "cra_t3010",
+      "description": "Canadian Blood Services T3010 — $6.5B total government funding (primarily provincial health transfers)",
+      "url": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=870157641RR0001&dsrdPg=1",
+      "fiscalYear": 2023,
+      "amount": 6522042313
+    }
+  ],
+  "narrative": "Glenda Yeates sits on the boards of three organizations that collectively received $88.5 billion in government funding: Carleton University ($1.2B), the Government of the Province of Alberta ($80.8B, registered as a CRA charity for pension/benefit purposes), and Canadian Blood Services ($6.5B). The enormous provincial figure reflects institutional-scale inter-governmental transfers rather than discretionary grants. This pattern illustrates how CivicGraph surfaces governance actors who bridge federal and provincial funding streams — Yeates connects a federal research university, a provincial government entity, and a national health service, all receiving both federal and provincial money."
+}

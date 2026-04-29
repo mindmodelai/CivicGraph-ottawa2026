@@ -1,0 +1,25 @@
+{
+  "results": [
+    { "id": "p_001", "name": "GRAND RIVER HEALTH (Gagnon + Murray)", "province": "ON", "boards": 1, "totalFunding": 2130339000, "compositeScore": 9.33 },
+    { "id": "p_002", "name": "Yeates, Glenda", "province": "ON", "boards": 3, "totalFunding": 88532237487, "compositeScore": 32.73 },
+    { "id": "p_003", "name": "Nalugwa, Victoria", "province": "BC", "boards": 55, "totalFunding": 103575, "compositeScore": 275.84 },
+    { "id": "p_004", "name": "Franken, Gary", "province": "BC", "boards": 43, "totalFunding": 15136240, "compositeScore": 308.74 },
+    { "id": "p_005", "name": "Fong, Angela", "province": "AB", "boards": 4, "totalFunding": 84838185791, "compositeScore": 43.68 },
+    { "id": "p_006", "name": "Mintz, Jack", "province": "AB", "boards": 5, "totalFunding": 83448343891, "compositeScore": 54.55 },
+    { "id": "p_007", "name": "Terrio, Paul", "province": "QC", "boards": 42, "totalFunding": 1265474, "compositeScore": 256.29 },
+    { "id": "p_008", "name": "Britton, Sheila", "province": "ON", "boards": 45, "totalFunding": 320000, "compositeScore": 247.50 },
+    { "id": "p_009", "name": "Bingham, Mikael", "province": "AB", "boards": 38, "totalFunding": 442316, "compositeScore": 214.54 },
+    { "id": "p_010", "name": "Williams, Wayne", "province": "ON", "boards": 34, "totalFunding": 120630599, "compositeScore": 274.77 },
+    { "id": "p_011", "name": "MacDougall, Brian", "province": "NS", "boards": 33, "totalFunding": 89000000, "compositeScore": 262.10 },
+    { "id": "p_012", "name": "Cooke, Melissa", "province": "BC", "boards": 32, "totalFunding": 127406658, "compositeScore": 259.37 },
+    { "id": "p_013", "name": "Potts, Jeff", "province": "ON", "boards": 31, "totalFunding": 89564143, "compositeScore": 246.52 },
+    { "id": "p_014", "name": "Atwal, Janice", "province": "BC", "boards": 42, "totalFunding": 1265474, "compositeScore": 256.29 },
+    { "id": "p_015", "name": "Richter, Keith", "province": "AB", "boards": 27, "totalFunding": 75680260, "compositeScore": 212.73 },
+    { "id": "p_016", "name": "Hodder, Gary", "province": "NL", "boards": 28, "totalFunding": 75680260, "compositeScore": 220.61 },
+    { "id": "p_017", "name": "Dufresne, Roger", "province": "QC", "boards": 25, "totalFunding": 312762516, "compositeScore": 212.38 },
+    { "id": "p_018", "name": "Young, Trevor", "province": "ON", "boards": 15, "totalFunding": 30343217806, "compositeScore": 157.05 },
+    { "id": "p_019", "name": "Houston, Patricia", "province": "ON", "boards": 8, "totalFunding": 24448068133, "compositeScore": 83.04 },
+    { "id": "p_020", "name": "MonAvenir (Conseil Scolaire Catholique)", "province": "ON", "boards": 1, "totalFunding": 1540000000, "compositeScore": 9.19 }
+  ],
+  "generatedAt": "2026-04-29T19:50:00Z"
+}

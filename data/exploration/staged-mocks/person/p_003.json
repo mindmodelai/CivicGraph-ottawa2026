@@ -1,0 +1,62 @@
+{
+  "person": {
+    "id": "p_003",
+    "name": "Nalugwa, Victoria",
+    "province": "BC",
+    "boards": 55,
+    "totalFunding": 103575
+  },
+  "graph": {
+    "nodes": [
+      { "id": "p_nalugwa_victoria", "label": "Nalugwa, Victoria", "type": "person", "province": "BC" },
+      { "id": "o_118980705", "label": "Kildonan Foundation Society", "type": "org", "size": 0, "province": "BC" },
+      { "id": "o_119138493", "label": "Samaritan Children's Charitable Foundation", "type": "org", "size": 0, "province": "BC" },
+      { "id": "o_710063892", "label": "Ignite Education Foundation", "type": "org", "size": 0, "province": "BC" },
+      { "id": "o_726344484", "label": "Quo Vadis Ministry", "type": "org", "size": 0, "province": "BC" },
+      { "id": "o_782538292", "label": "Canadian Urban Planning Foundation", "type": "org", "size": 0, "province": "BC" },
+      { "id": "o_801967084", "label": "Canada West Cultural Diversity Society", "type": "org", "size": 0, "province": "BC" },
+      { "id": "o_806765673", "label": "Caritas Per Iustitiam Foundation", "type": "org", "size": 0, "province": "BC" },
+      { "id": "o_807769245", "label": "Planted Community Foundation", "type": "org", "size": 0, "province": "BC" },
+      { "id": "o_808971865", "label": "Vancouver Healing Rooms Society", "type": "org", "size": 0, "province": "BC" },
+      { "id": "o_811674787", "label": "Help Change My City Social Youth Trust Society", "type": "org", "size": 0, "province": "BC" },
+      { "id": "o_nalugwa_other", "label": "+ 45 more organizations", "type": "org", "size": 103575, "province": "BC" }
+    ],
+    "edges": [
+      { "source": "p_nalugwa_victoria", "target": "o_118980705", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=118980705RR0001&dsrdPg=1" },
+      { "source": "p_nalugwa_victoria", "target": "o_119138493", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=119138493RR0001&dsrdPg=1" },
+      { "source": "p_nalugwa_victoria", "target": "o_710063892", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=710063892RR0001&dsrdPg=1" },
+      { "source": "p_nalugwa_victoria", "target": "o_726344484", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=726344484RR0001&dsrdPg=1" },
+      { "source": "p_nalugwa_victoria", "target": "o_782538292", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=782538292RR0001&dsrdPg=1" },
+      { "source": "p_nalugwa_victoria", "target": "o_801967084", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=801967084RR0001&dsrdPg=1" },
+      { "source": "p_nalugwa_victoria", "target": "o_806765673", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=806765673RR0001&dsrdPg=1" },
+      { "source": "p_nalugwa_victoria", "target": "o_807769245", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=807769245RR0001&dsrdPg=1" },
+      { "source": "p_nalugwa_victoria", "target": "o_808971865", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=808971865RR0001&dsrdPg=1" },
+      { "source": "p_nalugwa_victoria", "target": "o_811674787", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=811674787RR0001&dsrdPg=1" },
+      { "source": "p_nalugwa_victoria", "target": "o_nalugwa_other", "edgeType": "SITS_ON", "role": "Director" }
+    ]
+  },
+  "provenance": [
+    {
+      "id": "cra_nalugwa_118980705",
+      "type": "cra_t3010",
+      "description": "T3010 director filing — Victoria Nalugwa listed as director of Kildonan Foundation Society",
+      "url": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=118980705RR0001&dsrdPg=1",
+      "fiscalYear": 2023
+    },
+    {
+      "id": "cra_nalugwa_119138493",
+      "type": "cra_t3010",
+      "description": "T3010 director filing — Victoria Nalugwa listed as director of Samaritan Children's Charitable Foundation",
+      "url": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=119138493RR0001&dsrdPg=1",
+      "fiscalYear": 2023
+    },
+    {
+      "id": "cra_nalugwa_710063892",
+      "type": "cra_t3010",
+      "description": "T3010 director filing — Victoria Nalugwa listed as director of Ignite Education Foundation",
+      "url": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=710063892RR0001&dsrdPg=1",
+      "fiscalYear": 2023
+    }
+  ],
+  "narrative": "Victoria Nalugwa sits on the boards of 55 distinct registered charities, all based in British Columbia. With an uncommon surname making name collision unlikely, this represents one of the highest board-seat concentrations for a probable single individual in the CRA dataset. The organizations collectively received $103,575 in government funding — modest amounts individually, but the sheer breadth of governance involvement across dozens of entities is the signal CivicGraph surfaces. This pattern could indicate legitimate community leadership or warrant questions about effective oversight across so many organizations."
+}
