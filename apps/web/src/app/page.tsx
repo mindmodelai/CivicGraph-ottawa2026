@@ -5,6 +5,7 @@ import Image from 'next/image';
 import type { TopResponse } from '@/lib/types';
 import PersonRow from '@/components/PersonRow';
 import SearchBox from '@/components/SearchBox';
+import Footer from '@/components/Footer';
 import { getTop } from '@/lib/api';
 
 export default function HomePage() {
@@ -62,12 +63,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer className="border-t border-gray-200 mt-8">
-        <div className="max-w-4xl mx-auto px-4 py-4 text-xs text-gray-400">
-          Data: CRA T3010, Government of Canada Open Data, Government of Alberta Open Data.
-          Score = boards × log₁₀(1 + funding).
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }

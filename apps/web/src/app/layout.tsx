@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'CivicGraph — The Governance Network Behind Canada\'s Public Funding',
   description: 'Search 23 million rows of open Canadian government data to see who controls the boards that receive public money. Built on CRA T3010 filings, federal grants, and Alberta grant records.',
   keywords: ['CivicGraph', 'Canadian governance', 'charity boards', 'public funding', 'CRA T3010', 'open data', 'transparency'],
-  authors: [{ name: 'CivicGraph Team' }],
+  authors: [{ name: 'Samuel Hebeisen' }],
   openGraph: {
     title: 'CivicGraph — The Governance Network Behind Canada\'s Public Funding',
     description: 'Search 23 million rows of open Canadian government data to see who controls the boards that receive public money.',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     locale: 'en_CA',
     images: [
       {
-        url: '/cover.png',
+        url: 'https://main.dtb5pniv8a3tl.amplifyapp.com/cover.png',
         width: 1200,
         height: 630,
         alt: 'CivicGraph — The governance network behind Canada\'s public funding',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'CivicGraph — Governance Network',
     description: 'Who controls the boards that receive public money? Search 23M rows of open Canadian government data.',
-    images: ['/cover.png'],
+    images: ['https://main.dtb5pniv8a3tl.amplifyapp.com/cover.png'],
   },
 };
 

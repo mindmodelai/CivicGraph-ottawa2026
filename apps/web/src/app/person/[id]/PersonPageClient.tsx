@@ -6,6 +6,7 @@ import type { PersonDetailResponse } from '@/lib/types';
 import { formatCAD } from '@/lib/format';
 import { getPerson } from '@/lib/api';
 import ProvenanceChip from '@/components/ProvenanceChip';
+import Footer from '@/components/Footer';
 import PersonDetailClient from './client';
 
 export default function PersonPageClient({ id }: { id: string }) {
@@ -28,6 +29,7 @@ export default function PersonPageClient({ id }: { id: string }) {
           <h1 className="text-xl font-bold text-gray-900 mb-2">Person data unavailable</h1>
           <p className="text-sm text-gray-500">{error}</p>
         </div>
+        <Footer />
       </main>
     );
   }
@@ -88,11 +90,7 @@ export default function PersonPageClient({ id }: { id: string }) {
         </section>
       </div>
 
-      <footer className="border-t border-gray-200 mt-8">
-        <div className="max-w-5xl mx-auto px-4 py-4 text-xs text-gray-400">
-          Data: CRA T3010, Government of Canada Open Data, Government of Alberta Open Data.
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
