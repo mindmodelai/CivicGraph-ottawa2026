@@ -25,9 +25,9 @@ See docs/architecture.md and docs/api-contract.md for technical contracts.
   - Neptune endpoint: `civicgraph-graph.cluster-c5qoqo2omjl2.us-west-2.neptune.amazonaws.com:8182`
   - Lambda role: `civicgraph-lambda-execution-role` (already has bedrock:InvokeModel, neptune-db:*, s3:Get/Put)
   - Lambda SG: `sg-01fed06d715bb8d6e` (already allowed into Neptune SG)
-  - Deploy via API Gateway REST API
+  - Deploy via API Gateway REST API with CORS enabled (`Access-Control-Allow-Origin: *`) for frontend integration
   - **Bedrock smoke test:** Verify `us.anthropic.claude-sonnet-4-6` is callable from Lambda execution role before full deploy
-  - **Done when:** All 3 endpoints return contract-shape JSON; Bedrock smoke test passes; API Gateway URL committed to `infra/provisioning-status.md`
+  - **Done when:** (1) `curl <api-url>/api/top` returns valid TopResponse with 20 entries; (2) `curl <api-url>/api/person/<id>` returns PersonDetailResponse including a non-empty `narrative` string; (3) Bedrock smoke test passes; (4) API Gateway base URL committed to `infra/provisioning-status.md`
 
 ## Kiro-CLI Laptop (Agent B) — apps/web/
 
