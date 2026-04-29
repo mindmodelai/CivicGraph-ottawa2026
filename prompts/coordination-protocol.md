@@ -1,48 +1,93 @@
-# Coordination protocol — for working agents
+# CivicGraph coordination protocol
 
-This protocol applies to: Kiro-CLI-RDP, Kiro-CLI Laptop, Claude Code Laptop. The Claude Code Orchestrator does not pick up tasks; it manages delegation.
+This is the canonical reference for all four agents. Pull origin/main, read this file, then act.
 
-## Identity and ownership
+## Who's who
 
-- Kiro-CLI-RDP — AWS infra, backend, ETL. Owned: infra/, apps/api/, data/scripts/
-- Kiro-CLI Laptop — Frontend. Owned: apps/web/
-- Claude Code Laptop — Data exploration, scribe. Owned: data/exploration/, docs/findings*.md, prompts/, coordination/, progress/
+**Kiro-CLI-RDP** — Kiro CLI on the RDP Ubuntu box (i-0a6c2a8d83e333a87). Has unlocked AWS instance role.
+- Role: AWS infra, backend, ETL, deploys
+- Owned: infra/, apps/api/, data/scripts/
 
-Hard rule: do not edit files outside your owned directories. If you need work done in another agent's directory, append a request to coordination/blockers.md and continue with your next non-blocked task.
+**Kiro-CLI Laptop** — Kiro CLI on operator's Windows laptop.
+- Role: Frontend
+- Owned: apps/web/
 
-## Protocol on every task cycle
+**Claude Code Laptop** — Claude Code on operator's Windows laptop.
+- Role: Data exploration + scribe
+- Owned: data/exploration/, docs/findings.md, docs/findings-verification.md, prompts/, coordination/, progress/
+
+**Claude Code Orchestrator** — Claude Code on operator's machine, separate session.
+- Role: Manage delegation, keep .kiro/specs/civicgraph/tasks.md current, surface blockers
+- Owned: .kiro/specs/civicgraph/, coordination/ (shared with Claude Code Laptop)
+- Does NOT pick up working tasks. Does NOT edit apps/, infra/, or data/scripts/.
+
+## Hard ownership rule
+
+Do not edit files outside your owned directories. If you need work done in another agent's directory, append a request to coordination/blockers.md and continue with your next non-blocked task.
+
+## Task claim protocol — for working agents only (not Orchestrator)
+
+Status markers in .kiro/specs/civicgraph/tasks.md:
+- [ ] = unstarted, available
+- [~] = in progress, claimed
+- [x] = done
+
+On every cycle:
 
 1. git pull --rebase origin main
-2. Read .kiro/specs/civicgraph/tasks.md. Find your section.
-3. Look for the next unchecked task. If a task is marked [~] (in progress) by another agent, skip it.
-4. Mark the task you're starting as [~] in .kiro/specs/civicgraph/tasks.md. Commit chore(coord): claim <task-id>. Push.
-5. Do the work in your owned directories.
-6. After finishing the work, commit with the right prefix:
+2. Find your section in .kiro/specs/civicgraph/tasks.md. Look for the next [ ] task.
+3. Edit [ ] to [~] and add: <!-- claimed by <agent-name> at <ISO timestamp> -->
+4. Commit: chore(coord): claim <task-id>. Push immediately.
+5. Pull-rebase again. If your [~] was overwritten by another agent's [~] on the same task, you lost the race — yield, pick the next [ ] task.
+6. Do the work in your owned directories.
+7. After work is complete, commit with the right prefix:
    - feat(infra): for infra/
    - feat(api): for apps/api/
    - feat(web): for apps/web/
    - feat(data): for data/scripts/, data/exploration/
    - docs(<area>): for docs/
    - chore(coord): for prompts/, coordination/, .kiro/
-7. git pull --rebase origin main
-8. git push origin main
-9. Mark the task [x] in .kiro/specs/civicgraph/tasks.md. Commit chore(coord): complete <task-id>. Push.
-10. Loop back to step 1.
+8. git pull --rebase origin main
+9. git push origin main
+10. Edit [~] to [x]. Commit: chore(coord): complete <task-id>. Push.
+11. Loop to step 1.
 
-## Rules
+If everything in your section is [~] or [x], write a progress snapshot to progress/<your-name>-<unix-timestamp>.md and stop. Wait for the operator or the Orchestrator to add tasks.
 
-- Pull-rebase before starting any task — another agent may have committed something you need.
+## Blockers
+
+If stuck more than 5 minutes, append to coordination/blockers.md:
+[<ISO timestamp>] <agent-name>: <description> — needs <what>
+Then pick up the next non-blocked task in your section.
+
+## Standing rules
+
+- Pull-rebase before any task. Always.
 - Push immediately after each commit.
-- If stuck >5 min, append to coordination/blockers.md and pick up the next non-blocked task.
-- The orchestrator may edit .kiro/specs/civicgraph/tasks.md while you work — pull-rebase before scribe edits.
-- Do not relay instructions through chat. The repo is the messaging layer.
+- Never force-push.
+- Never edit another agent's owned directory.
+- The repo is the messaging layer. Do not relay instructions through chat.
+- Bedrock model: us.anthropic.claude-sonnet-4-6 only. Bare model IDs are denied.
 
 ## Wake-up one-liner from operator
 
-When the operator says "wake up" or pings with a short message, do this:
+Working agents: when the operator pings, do this:
 
 git pull --rebase origin main
-Read .kiro/specs/civicgraph/tasks.md, find your section, pick up the next unchecked task.
-Continue down the column following the protocol above until done or blocked.
+Read prompts/coordination-protocol.md, find your section in .kiro/specs/civicgraph/tasks.md, follow the claim protocol on the next [ ] task. Continue until done or blocked.
 
-That's the only message you ever need from the operator going forward.
+## Orchestrator's job
+
+The Orchestrator does not pick up working tasks. Its cycle:
+
+1. git pull --rebase origin main
+2. Read progress/*.md (most recent), coordination/blockers.md, .kiro/specs/civicgraph/tasks.md
+3. Identify what each agent should do next based on dependencies
+4. Update .kiro/specs/civicgraph/tasks.md if it doesn't reflect reality (mark done, add new tasks, mark cut). Use [ ] / [~] / [x].
+5. Commit chore(coord): <description> and push
+6. Report status back to operator
+7. Wait for operator input
+
+---
+
+End of protocol.
