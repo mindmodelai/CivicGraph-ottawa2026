@@ -9,7 +9,7 @@ See docs/architecture.md and docs/api-contract.md for technical contracts.
 ## Kiro-CLI-RDP (Agent A) — infra/, apps/api/, data/scripts/
 
 - [x] Task 2: CDK scaffold + deploy Neptune + S3 staging
-- [~] Task 4: ETL — JSONL → Neptune bulk-load CSVs → bulk load <!-- claimed by Kiro-CLI-RDP -->
+- [~] Task 4: ETL — JSONL → Neptune bulk-load CSVs → bulk load <!-- claimed by Kiro-CLI-RDP; resuming after OOM on sits_on.csv, Neptune scaled to 64 NCU -->
 - [ ] Task 6: Top-20 pre-compute
   - Query Neptune (`civicgraph-graph.cluster-c5qoqo2omjl2.us-west-2.neptune.amazonaws.com:8182`)
   - Composite score: `boards × log10(1 + totalFunding)` per Person vertex
@@ -44,12 +44,18 @@ See docs/architecture.md and docs/api-contract.md for technical contracts.
 - [x] Task 3: Next.js scaffold + mock fixtures + shared types
 - [x] Task 5: Screen 1 — Top-20 landing page (mock data)
 - [x] Task 7: Screen 2 — Person detail + Cytoscape graph (mock data)
-- [ ] Task 10: Frontend API integration + SearchBox + live Bedrock narrative (blocked on Task 8)
+- [~] B-MOCK-SWAP: Copy real-data mocks from data/exploration/staged-mocks/ to apps/web/public/mocks/ <!-- in progress by Kiro-CLI Laptop -->
+  - Replace placeholder mocks with verified findings data (top.json, person/*.json)
+  - **Done when:** Amplify rebuild shows real names/numbers on Screen 1 and person detail pages
+- [ ] Task 10: Frontend API integration + SearchBox + live Bedrock narrative (blocked on Task 8 publishing infra/api-endpoint.txt)
 
 ## Claude Code Laptop (Agent C) — data/exploration/, docs/findings*.md, prompts/, coordination/, progress/
 
 - [x] Task 1: S3 data inventory + schema validation
 - [x] Task 9: Killer findings + docs/findings.md + verification + demo payload
+- [~] C-STAGE-MOCKS: Stage real-data mocks at data/exploration/staged-mocks/ for frontend swap <!-- in progress by Claude Code Laptop -->
+  - Generate top.json and person/{id}.json from verified findings matching API contract schema
+  - **Done when:** data/exploration/staged-mocks/ contains top.json + 3 person detail JSONs
 
 ## All agents (shared)
 
@@ -62,7 +68,7 @@ See docs/architecture.md and docs/api-contract.md for technical contracts.
 
 Task 4 → Task 6 → Task 8 → Task 10 → Task 11 → Task 12
 
-Agent B is idle until Task 8 completes (API deploy). Agent C has no remaining solo tasks — available for scribe/orchestration support.
+Agent B is working on mock swap (B-MOCK-SWAP) while waiting for Task 8. Agent C is staging real-data mocks (C-STAGE-MOCKS). Task 6 auto-unblocks when Task 4 bulk load reaches LOAD_COMPLETED.
 
 ## Orchestrator notes
 
