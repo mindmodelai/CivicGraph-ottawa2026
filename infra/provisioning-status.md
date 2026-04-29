@@ -64,13 +64,12 @@ Account: 006193923397
 
 ## What's next (depends on spec)
 
-- Lambda function deploy
-- API Gateway setup
-- Amplify hosting
-- Frontend deployment
-- Bulk load CSV generation (depends on Agent C schema discovery)
-- Bulk load execution
-- Entity resolution batch
+- ~~Lambda function deploy~~ ✅ Done (2026-04-29T17:21Z)
+- ~~API Gateway setup~~ ✅ Done (CORS enabled, all 3 endpoints live)
+- ~~Amplify hosting~~ ✅ Done (2026-04-29T15:52Z)
+- Frontend API integration (Task 10, blocked on Agent B)
+- End-to-end verification (Task 11)
+- Demo rehearsal + submit (Task 12)
 
 ## Teardown command (run after demo, ~5pm)
 

@@ -1,15 +1,15 @@
 import { build } from 'esbuild';
-import { readdirSync } from 'fs';
 
-const handlers = readdirSync('handlers').filter(f => f.endsWith('.mjs'));
-await Promise.all(handlers.map(f => build({
-  entryPoints: [`handlers/${f}`],
-  bundle: true,
-  platform: 'node',
-  target: 'node20',
-  format: 'esm',
-  outfile: `dist/${f.replace('.mjs', '/index.mjs')}`,
+const shared = {
+  bundle: true, platform: 'node', target: 'node20', format: 'esm',
   banner: { js: "import{createRequire}from'module';const require=createRequire(import.meta.url);" },
-  external: ['@aws-sdk/*'],
-})));
-console.log('Built:', handlers);
+};
+
+// top.mjs only uses @aws-sdk (provided by Lambda runtime)
+await build({ ...shared, entryPoints: ['handlers/top.mjs'], outfile: 'dist/top/index.mjs', external: ['@aws-sdk/*'] });
+
+// search + person use @aws-crypto and @smithy for Neptune SigV4 — must bundle those
+await build({ ...shared, entryPoints: ['handlers/search.mjs'], outfile: 'dist/search/index.mjs', external: ['@aws-sdk/client-bedrock-runtime', '@aws-sdk/credential-provider-node'] });
+await build({ ...shared, entryPoints: ['handlers/person.mjs'], outfile: 'dist/person/index.mjs', external: ['@aws-sdk/client-bedrock-runtime', '@aws-sdk/credential-provider-node'] });
+
+console.log('Built: top, search, person');

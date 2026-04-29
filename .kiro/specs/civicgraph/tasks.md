@@ -9,15 +9,15 @@ See docs/architecture.md and docs/api-contract.md for technical contracts.
 ## Kiro-CLI-RDP (Agent A) — infra/, apps/api/, data/scripts/
 
 - [x] Task 2: CDK scaffold + deploy Neptune + S3 staging
-- [~] Task 4: ETL — JSONL → Neptune bulk-load CSVs → bulk load <!-- claimed by Kiro-CLI-RDP; resuming after OOM on sits_on.csv, Neptune scaled to 64 NCU -->
-- [ ] Task 6: Top-20 pre-compute
+- [x] Task 4: ETL — JSONL → Neptune bulk-load CSVs → bulk load <!-- completed: 990,334 records, 0 errors, 107s -->
+- [x] Task 6: Top-20 pre-compute <!-- completed 2026-04-29T17:05Z: 20 entries, top=ANDREW SMITH score=293.22 -->
   - Query Neptune (`civicgraph-graph.cluster-c5qoqo2omjl2.us-west-2.neptune.amazonaws.com:8182`)
   - Composite score: `boards × log10(1 + totalFunding)` per Person vertex
   - Write result to `s3://civicgraph-staging-006193923397-us-west-2/cache/top.json`
   - Must match TopResponse schema (see docs/api-contract.md): `{ results: RankedPerson[], generatedAt: string }`
   - Use golden records (`general/entity_golden_records.jsonl`) for entity IDs — skip resolve.py
   - **Done when:** `cache/top.json` exists in S3 with 20 entries, each having id/name/province/boards/totalFunding/compositeScore
-- [ ] Task 8: Lambda handlers + Bedrock smoke test + API deploy
+- [x] Task 8: Lambda handlers + Bedrock smoke test + API deploy <!-- completed 2026-04-29T17:21Z: all 3 endpoints live, Bedrock narrative working, CORS enabled -->
   - Implement 3 handlers in `apps/api/handlers/`: `top.ts`, `search.ts`, `person.ts`
   - `top.ts`: read `s3://civicgraph-staging-006193923397-us-west-2/cache/top.json`, return TopResponse
   - `search.ts`: Bedrock query understanding (`us.anthropic.claude-sonnet-4-6`) + Neptune openCypher fuzzy search, return SearchResponse
