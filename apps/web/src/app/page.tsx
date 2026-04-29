@@ -18,10 +18,20 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-white">
+      <div className="bg-gray-50 border-b border-gray-200 py-2">
+        <div className="max-w-4xl mx-auto px-4 flex flex-wrap items-center justify-between text-sm text-gray-600">
+          <span>Created by Samuel Hebeisen for the Ottawa 2026 hackathon · Infrastructure: fully AWS native</span>
+          <span className="flex gap-4">
+            <a href="https://mindmodel.ai" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800">mindmodel.ai</a>
+            <a href="https://org.tech" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800">org.tech</a>
+          </span>
+        </div>
+      </div>
+
       <header className="border-b border-gray-200 bg-white sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 py-6">
-          <div className="flex items-center gap-3">
-            <Image src="/logo.jpg" alt="CivicGraph" width={40} height={40} className="rounded" />
+          <div className="flex items-center gap-4">
+            <Image src="/logo.jpg" alt="CivicGraph" width={300} height={300} className="rounded w-16 h-16 sm:w-20 sm:h-20" />
             <div>
               <h1 className="text-2xl font-bold text-gray-900">CivicGraph</h1>
               <p className="text-sm text-gray-500">

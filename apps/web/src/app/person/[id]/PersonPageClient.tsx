@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import type { PersonDetailResponse } from '@/lib/types';
 import { formatCAD } from '@/lib/format';
@@ -9,7 +10,11 @@ import ProvenanceChip from '@/components/ProvenanceChip';
 import Footer from '@/components/Footer';
 import PersonDetailClient from './client';
 
-export default function PersonPageClient({ id }: { id: string }) {
+export default function PersonPageClient({ id: propId }: { id: string }) {
+  const pathname = usePathname();
+  // Extract ID from URL path — handles Amplify rewrite where propId may be stale
+  const id = pathname?.split('/person/')[1]?.replace(/\/$/, '') || propId;
+
   const [data, setData] = useState<PersonDetailResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
 
