@@ -1,21 +1,19 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import type { TopResponse } from '@/lib/types';
 import PersonRow from '@/components/PersonRow';
 import SearchBox from '@/components/SearchBox';
+import { getTop } from '@/lib/api';
 
-async function getTopData(): Promise<TopResponse> {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  if (apiUrl) {
-    const res = await fetch(`${apiUrl}/api/top?n=20`, { next: { revalidate: 60 } });
-    if (!res.ok) throw new Error(`API error: ${res.status}`);
-    return res.json();
-  }
-  const data = await import('../../public/mocks/top.json');
-  return data.default as TopResponse;
-}
+export default function HomePage() {
+  const [data, setData] = useState<TopResponse | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
-export default async function HomePage() {
-  const data = await getTopData();
+  useEffect(() => {
+    getTop().then(setData).catch((e) => setError(e.message));
+  }, []);
 
   return (
     <main className="min-h-screen bg-white">
@@ -45,7 +43,20 @@ export default async function HomePage() {
           <span className="text-right hidden sm:block">Score</span>
         </div>
         <div className="border-t border-gray-200">
-          {data.results.map((person, i) => (
+          {error && (
+            <div className="px-4 py-8 text-center text-sm text-red-500">{error}</div>
+          )}
+          {!data && !error && (
+            Array.from({ length: 20 }, (_, i) => (
+              <div key={i} className="grid grid-cols-[2rem_1fr_3rem_6rem] sm:grid-cols-[3rem_1fr_4rem_8rem_5rem] gap-2 sm:gap-4 items-center px-4 py-3 border-b border-gray-100">
+                <div className="h-4 w-6 bg-gray-100 rounded animate-pulse ml-auto" />
+                <div className="h-4 w-48 bg-gray-100 rounded animate-pulse" />
+                <div className="h-4 w-8 bg-gray-100 rounded animate-pulse ml-auto" />
+                <div className="h-4 w-20 bg-gray-100 rounded animate-pulse ml-auto" />
+              </div>
+            ))
+          )}
+          {data?.results.map((person, i) => (
             <PersonRow key={person.id} person={person} rank={i + 1} />
           ))}
         </div>

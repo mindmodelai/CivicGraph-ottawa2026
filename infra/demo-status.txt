@@ -1,0 +1,35 @@
+# CivicGraph Demo Status
+
+Verified: 2026-04-29T13:35:00-04:00
+
+## Live URL
+https://main.dtb5pniv8a3tl.amplifyapp.com
+
+## API URL
+https://lpyurzgtdc.execute-api.us-west-2.amazonaws.com/prod
+
+## Verification Results
+
+### API Endpoints
+- [x] GET /api/top — returns 20 ranked persons with real Neptune data (first: ANDREW SMITH, 28 boards, $29.7B)
+- [x] GET /api/person/{id} — returns full ego graph + Bedrock narrative for any person ID
+- [x] GET /api/search?q= — returns fuzzy search results
+
+### Frontend (Amplify)
+- [x] Amplify deployment SUCCEED (job 4)
+- [x] NEXT_PUBLIC_API_URL env var set on Amplify app
+- [x] Static export built with API URL baked in
+- [x] Client-side rendering fetches from live API at runtime
+- [x] Mock fallback intact (mocks in /public/mocks/ still served if API unreachable)
+- [x] Logo and cover image deployed
+- [x] Meta tags (og:image, twitter:card) populated
+
+### Architecture
+- Frontend: Next.js 14 static export → Amplify CDN
+- API: API Gateway → Lambda (Node 20 ARM64) → Neptune Serverless + Bedrock Sonnet 4.6
+- Data: 2.87M director filings, 422K orgs, 3.2M grant records loaded into Neptune
+
+### Known Limitations
+- Person detail pages for mock IDs (p_grh_concentrated, p_nalugwa_victoria, p_yeates_glenda) prerendered as client shells; real data loads via API at runtime
+- Search requires API to be live (no mock search endpoint)
+- Narrative generation adds ~2-3s to person detail load (Bedrock latency)
