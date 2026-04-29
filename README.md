@@ -2,11 +2,25 @@
 
 **The governance network behind Canada's public funding.**
 
-CivicGraph turns 23 million rows of open Canadian government data into a queryable graph of the people and organizations behind every publicly-funded board. Search a name, see every charity board that person serves on, and trace every federal and Alberta dollar that has flowed to those boards.
-
-Built for the Agency 2026 Ottawa hackathon (April 29, 2026).
+**Live Demo:** [https://main.dtb5pniv8a3tl.amplifyapp.com/](https://main.dtb5pniv8a3tl.amplifyapp.com/)
 
 ---
+
+## What is CivicGraph?
+
+CivicGraph turns 23 million rows of open Canadian government data into a queryable graph of the people and organizations behind every publicly-funded board. It answers one question: **who controls the boards that receive public money?**
+
+This is a prioritization tool for journalists, auditors, and policy researchers — not an accusation engine. Every fact in the UI is one click away from its source filing.
+
+## The Problem
+
+Canadian public funding flows through thousands of registered charities, health authorities, school boards, and government entities. The governance records exist — CRA T3010 filings, federal grants disclosures, provincial grants ledgers — but they're scattered across separate datasets with no unified view of the people connecting them.
+
+CivicGraph unifies these datasets into a single searchable graph, surfacing structural patterns that would take weeks to find manually:
+
+- **Governance concentration** — too few eyes on too much public money
+- **Board seat breadth** — single individuals on dozens of organizations
+- **Cross-jurisdiction bridging** — directors connecting federal and provincial funding streams
 
 ## What it found
 
@@ -16,7 +30,35 @@ Built for the Agency 2026 Ottawa hackathon (April 29, 2026).
 | Breadth of reach | **Victoria Nalugwa** — 55 distinct charity boards in BC (unique name, single person) | CRA T3010 director filings |
 | Cross-jurisdiction bridging | **Glenda Yeates** — 3 boards spanning $573M federal + $88B provincial | CRA T3010 + federal grants |
 
-Every fact links to its public source filing. CivicGraph is a prioritization tool, not an accusation engine.
+---
+
+## How to Use
+
+### Live Demo
+
+Visit [https://main.dtb5pniv8a3tl.amplifyapp.com/](https://main.dtb5pniv8a3tl.amplifyapp.com/)
+
+1. **Screen 1 — Top 20 List:** The landing page shows the 20 most structurally interesting governance entries, ranked by composite score (board seats x log of total funding). Click any row to explore.
+
+2. **Screen 2 — Person Detail:** An interactive force-directed graph showing the person at center, connected to every organization they direct and every government funder of those organizations. Edges show dollar amounts. Provenance chips link to source filings. An AI-generated narrative summarizes the pattern in plain English.
+
+3. **Search:** Type a name in the search box to find any person or organization in the dataset.
+
+### Run Locally
+
+```bash
+# Frontend
+cd apps/web
+npm install
+npm run dev
+# → http://localhost:3000 (renders with mock data by default)
+
+# Point at live API (once deployed)
+echo "NEXT_PUBLIC_API_URL=https://<api-id>.execute-api.us-west-2.amazonaws.com" > .env.local
+npm run dev
+```
+
+Requires Node 20+.
 
 ---
 
@@ -44,9 +86,7 @@ Every fact links to its public source filing. CivicGraph is a prioritization too
 
 **Data model:** Person → SITS_ON → Org ← FUNDED ← GovEntity. Edges carry dollar amounts, fiscal years, and source filing IDs.
 
----
-
-## Data sources
+## Data Sources
 
 | Dataset | Records | What it provides |
 |---------|---------|------------------|
@@ -57,29 +97,9 @@ Every fact links to its public source filing. CivicGraph is a prioritization too
 | Alberta grants ledger | 1.99M | FUNDED edges (provincial) |
 | Entity golden records | 851K | Pre-resolved entities with aliases |
 
-All data sourced from `s3://agency2026-team-2/` (hackathon-provisioned bucket).
-
 ---
 
-## Run locally
-
-```bash
-# Frontend
-cd apps/web
-npm install
-npm run dev
-# → http://localhost:3000 (renders with mock data by default)
-
-# Point at live API (once deployed)
-echo "NEXT_PUBLIC_API_URL=https://<api-id>.execute-api.us-west-2.amazonaws.com" > .env.local
-npm run dev
-```
-
-Requires Node 20+.
-
----
-
-## Project structure
+## Project Structure
 
 ```
 apps/web/          Next.js frontend (Cytoscape.js graph, Tailwind)
@@ -90,8 +110,6 @@ docs/              Architecture, API contract, findings, demo script
 infra/             CDK stacks and provisioning status
 prompts/           Agent coordination files
 ```
-
----
 
 ## Team
 
