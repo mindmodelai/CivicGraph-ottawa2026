@@ -1,0 +1,181 @@
+[
+  {
+    "person": {
+      "id": "p_grh_concentrated",
+      "name": "GRAND RIVER HEALTH (Governance Pattern)",
+      "province": "ON",
+      "boards": 1,
+      "totalFunding": 2130339000,
+      "confidence": 1.0
+    },
+    "graph": {
+      "nodes": [
+        { "id": "o_107579823", "label": "GRAND RIVER HEALTH", "type": "org", "size": 2130339000, "province": "ON" },
+        { "id": "p_gagnon_ron", "label": "Gagnon, Ron", "type": "person", "province": "ON" },
+        { "id": "p_murray_doug", "label": "Murray, Doug", "type": "person", "province": "ON" },
+        { "id": "g_on_prov", "label": "Province of Ontario", "type": "gov", "jurisdiction": "provincial" },
+        { "id": "o_870515996", "label": "Conseil Scolaire Catholique MonAvenir", "type": "org", "size": 1540000000, "province": "ON" },
+        { "id": "o_897171641", "label": "Cape Breton-Victoria Regional Centre for Education", "type": "org", "size": 876000000, "province": "NS" },
+        { "id": "o_140396748", "label": "Parkland School Division No 70", "type": "org", "size": 673000000, "province": "AB" }
+      ],
+      "edges": [
+        { "source": "p_gagnon_ron", "target": "o_107579823", "edgeType": "SITS_ON", "role": "Chief Executive Officer", "yearStart": 2018 },
+        { "source": "p_murray_doug", "target": "o_107579823", "edgeType": "SITS_ON", "role": "Chief Financial Officer", "yearStart": 2018 },
+        { "source": "g_on_prov", "target": "o_107579823", "edgeType": "FUNDED", "amount": 499120000, "fiscalYear": 2024, "sourceFilingId": "cra_107579823_2024", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=107579823RR0001&dsrdPg=1" },
+        { "source": "g_on_prov", "target": "o_107579823", "edgeType": "FUNDED", "amount": 452702000, "fiscalYear": 2023, "sourceFilingId": "cra_107579823_2023" },
+        { "source": "g_on_prov", "target": "o_107579823", "edgeType": "FUNDED", "amount": 436786000, "fiscalYear": 2022, "sourceFilingId": "cra_107579823_2022" },
+        { "source": "g_on_prov", "target": "o_107579823", "edgeType": "FUNDED", "amount": 407072000, "fiscalYear": 2021, "sourceFilingId": "cra_107579823_2021" },
+        { "source": "g_on_prov", "target": "o_107579823", "edgeType": "FUNDED", "amount": 334659000, "fiscalYear": 2020, "sourceFilingId": "cra_107579823_2020" }
+      ]
+    },
+    "provenance": [
+      {
+        "id": "cra_107579823_2024",
+        "type": "cra_t3010",
+        "description": "GRAND RIVER HEALTH T3010 filing FY2024 — $499.1M provincial funding, 2 officers on record",
+        "url": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=107579823RR0001&dsrdPg=1",
+        "fiscalYear": 2024,
+        "amount": 499120000
+      },
+      {
+        "id": "cra_107579823_2023",
+        "type": "cra_t3010",
+        "description": "GRAND RIVER HEALTH T3010 filing FY2023 — $452.7M provincial funding",
+        "url": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=107579823RR0001&dsrdPg=1",
+        "fiscalYear": 2023,
+        "amount": 452702000
+      },
+      {
+        "id": "cra_107579823_2022",
+        "type": "cra_t3010",
+        "description": "GRAND RIVER HEALTH T3010 filing FY2022 — $436.8M provincial funding",
+        "url": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=107579823RR0001&dsrdPg=1",
+        "fiscalYear": 2022,
+        "amount": 436786000
+      }
+    ],
+    "narrative": "Grand River Health received $2.13 billion in provincial funding over 5 fiscal years (2020–2024), with only 2 named officers in CRA T3010 filings: CEO Ron Gagnon and CFO Doug Murray. Government funding accounts for 79–83% of total revenue each year. This extreme governance concentration — a $2.1B public institution with just 2 declared officers — represents one of the most striking patterns in the dataset. While likely a health authority with broader governance not captured in T3010 filings, the reporting gap itself warrants scrutiny."
+  },
+  {
+    "person": {
+      "id": "p_nalugwa_victoria",
+      "name": "Nalugwa, Victoria",
+      "province": "BC",
+      "boards": 55,
+      "totalFunding": 103575,
+      "confidence": 0.95
+    },
+    "graph": {
+      "nodes": [
+        { "id": "p_nalugwa_victoria", "label": "Nalugwa, Victoria", "type": "person", "province": "BC" },
+        { "id": "o_118980705", "label": "Kildonan Foundation Society", "type": "org", "size": 0, "province": "BC" },
+        { "id": "o_119138493", "label": "Samaritan Children's Charitable Foundation", "type": "org", "size": 0, "province": "BC" },
+        { "id": "o_710063892", "label": "Ignite Education Foundation", "type": "org", "size": 0, "province": "BC" },
+        { "id": "o_726344484", "label": "Quo Vadis Ministry", "type": "org", "size": 0, "province": "BC" },
+        { "id": "o_782538292", "label": "Canadian Urban Planning Foundation", "type": "org", "size": 0, "province": "BC" },
+        { "id": "o_801967084", "label": "Canada West Cultural Diversity Society", "type": "org", "size": 0, "province": "BC" },
+        { "id": "o_806765673", "label": "Caritas Per Iustitiam Foundation", "type": "org", "size": 0, "province": "BC" },
+        { "id": "o_807769245", "label": "Planted Community Foundation", "type": "org", "size": 0, "province": "BC" },
+        { "id": "o_808971865", "label": "Vancouver Healing Rooms Society", "type": "org", "size": 0, "province": "BC" },
+        { "id": "o_811674787", "label": "Help Change My City Social Youth Trust Society", "type": "org", "size": 0, "province": "BC" },
+        { "id": "o_nalugwa_other", "label": "+ 45 more organizations", "type": "org", "size": 103575, "province": "BC" }
+      ],
+      "edges": [
+        { "source": "p_nalugwa_victoria", "target": "o_118980705", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=118980705RR0001&dsrdPg=1" },
+        { "source": "p_nalugwa_victoria", "target": "o_119138493", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=119138493RR0001&dsrdPg=1" },
+        { "source": "p_nalugwa_victoria", "target": "o_710063892", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=710063892RR0001&dsrdPg=1" },
+        { "source": "p_nalugwa_victoria", "target": "o_726344484", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=726344484RR0001&dsrdPg=1" },
+        { "source": "p_nalugwa_victoria", "target": "o_782538292", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=782538292RR0001&dsrdPg=1" },
+        { "source": "p_nalugwa_victoria", "target": "o_801967084", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=801967084RR0001&dsrdPg=1" },
+        { "source": "p_nalugwa_victoria", "target": "o_806765673", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=806765673RR0001&dsrdPg=1" },
+        { "source": "p_nalugwa_victoria", "target": "o_807769245", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=807769245RR0001&dsrdPg=1" },
+        { "source": "p_nalugwa_victoria", "target": "o_808971865", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=808971865RR0001&dsrdPg=1" },
+        { "source": "p_nalugwa_victoria", "target": "o_811674787", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=811674787RR0001&dsrdPg=1" },
+        { "source": "p_nalugwa_victoria", "target": "o_nalugwa_other", "edgeType": "SITS_ON", "role": "Director" }
+      ]
+    },
+    "provenance": [
+      {
+        "id": "cra_nalugwa_118980705",
+        "type": "cra_t3010",
+        "description": "T3010 director filing — Victoria Nalugwa listed as director of Kildonan Foundation Society",
+        "url": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=118980705RR0001&dsrdPg=1",
+        "fiscalYear": 2023
+      },
+      {
+        "id": "cra_nalugwa_119138493",
+        "type": "cra_t3010",
+        "description": "T3010 director filing — Victoria Nalugwa listed as director of Samaritan Children's Charitable Foundation",
+        "url": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=119138493RR0001&dsrdPg=1",
+        "fiscalYear": 2023
+      },
+      {
+        "id": "cra_nalugwa_710063892",
+        "type": "cra_t3010",
+        "description": "T3010 director filing — Victoria Nalugwa listed as director of Ignite Education Foundation",
+        "url": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=710063892RR0001&dsrdPg=1",
+        "fiscalYear": 2023
+      }
+    ],
+    "narrative": "Victoria Nalugwa sits on the boards of 55 distinct registered charities, all based in British Columbia. With an uncommon surname making name collision unlikely, this represents one of the highest board-seat concentrations for a probable single individual in the CRA dataset. The organizations collectively received $103,575 in government funding — modest amounts individually, but the sheer breadth of governance involvement across dozens of entities is the signal CivicGraph surfaces. This pattern could indicate legitimate community leadership or warrant questions about effective oversight across so many organizations."
+  },
+  {
+    "person": {
+      "id": "p_yeates_glenda",
+      "name": "Yeates, Glenda",
+      "province": "ON",
+      "boards": 3,
+      "totalFunding": 88532237487,
+      "confidence": 0.9
+    },
+    "graph": {
+      "nodes": [
+        { "id": "p_yeates_glenda", "label": "Yeates, Glenda", "type": "person", "province": "ON" },
+        { "id": "o_118838937", "label": "Carleton University", "type": "org", "size": 1171143500, "province": "ON" },
+        { "id": "o_124072513", "label": "Government of the Province of Alberta", "type": "org", "size": 80841165000, "province": "AB" },
+        { "id": "o_870157641", "label": "Canadian Blood Services", "type": "org", "size": 6522042313, "province": "ON" },
+        { "id": "g_fed", "label": "Federal Government", "type": "gov", "jurisdiction": "federal" },
+        { "id": "g_prov_on", "label": "Province of Ontario", "type": "gov", "jurisdiction": "provincial" },
+        { "id": "g_prov_ab", "label": "Province of Alberta", "type": "gov", "jurisdiction": "provincial" }
+      ],
+      "edges": [
+        { "source": "p_yeates_glenda", "target": "o_118838937", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=118838937RR0001&dsrdPg=1" },
+        { "source": "p_yeates_glenda", "target": "o_124072513", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=124072513RR0001&dsrdPg=1" },
+        { "source": "p_yeates_glenda", "target": "o_870157641", "edgeType": "SITS_ON", "role": "Director", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=870157641RR0001&dsrdPg=1" },
+        { "source": "g_fed", "target": "o_118838937", "edgeType": "FUNDED", "amount": 252452382, "program": "Various federal research grants", "sourceUrl": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=118838937RR0001&dsrdPg=1" },
+        { "source": "g_prov_on", "target": "o_118838937", "edgeType": "FUNDED", "amount": 916577792, "program": "Provincial operating grants" },
+        { "source": "g_fed", "target": "o_124072513", "edgeType": "FUNDED", "amount": 253433000, "program": "Federal transfers" },
+        { "source": "g_prov_ab", "target": "o_124072513", "edgeType": "FUNDED", "amount": 80587732000, "program": "Provincial consolidated revenue" },
+        { "source": "g_fed", "target": "o_870157641", "edgeType": "FUNDED", "amount": 66750007, "program": "Federal health transfers" },
+        { "source": "g_prov_on", "target": "o_870157641", "edgeType": "FUNDED", "amount": 6455292306, "program": "Provincial health funding" }
+      ]
+    },
+    "provenance": [
+      {
+        "id": "cra_118838937_t3010",
+        "type": "cra_t3010",
+        "description": "Carleton University T3010 — $252M federal + $917M provincial funding; Glenda Yeates listed as director",
+        "url": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=118838937RR0001&dsrdPg=1",
+        "fiscalYear": 2023,
+        "amount": 1171143500
+      },
+      {
+        "id": "cra_124072513_t3010",
+        "type": "cra_t3010",
+        "description": "Government of the Province of Alberta CRA registration — $80.8B in reported provincial funding (inter-governmental transfers)",
+        "url": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=124072513RR0001&dsrdPg=1",
+        "fiscalYear": 2023,
+        "amount": 80841165000
+      },
+      {
+        "id": "cra_870157641_t3010",
+        "type": "cra_t3010",
+        "description": "Canadian Blood Services T3010 — $6.5B total government funding (primarily provincial health transfers)",
+        "url": "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNm=&q.stts=0007&selectedCharityBn=870157641RR0001&dsrdPg=1",
+        "fiscalYear": 2023,
+        "amount": 6522042313
+      }
+    ],
+    "narrative": "Glenda Yeates sits on the boards of three organizations that collectively received $88.5 billion in government funding: Carleton University ($1.2B), the Government of the Province of Alberta ($80.8B, registered as a CRA charity for pension/benefit purposes), and Canadian Blood Services ($6.5B). The enormous provincial figure reflects institutional-scale inter-governmental transfers rather than discretionary grants. This pattern illustrates how CivicGraph surfaces governance actors who bridge federal and provincial funding streams — Yeates connects a federal research university, a provincial government entity, and a national health service, all receiving both federal and provincial money."
+  }
+]
