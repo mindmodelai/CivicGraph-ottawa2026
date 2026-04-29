@@ -1,16 +1,15 @@
+import Image from 'next/image';
 import type { TopResponse } from '@/lib/types';
 import PersonRow from '@/components/PersonRow';
 import SearchBox from '@/components/SearchBox';
 
 async function getTopData(): Promise<TopResponse> {
-  // In production, NEXT_PUBLIC_API_URL is set; in dev, read from mock
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   if (apiUrl) {
     const res = await fetch(`${apiUrl}/api/top?n=20`, { next: { revalidate: 60 } });
     if (!res.ok) throw new Error(`API error: ${res.status}`);
     return res.json();
   }
-  // Static import of mock data for build
   const data = await import('../../public/mocks/top.json');
   return data.default as TopResponse;
 }
@@ -22,10 +21,15 @@ export default async function HomePage() {
     <main className="min-h-screen bg-white">
       <header className="border-b border-gray-200 bg-white sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 py-6">
-          <h1 className="text-2xl font-bold text-gray-900">CivicGraph</h1>
-          <p className="text-sm text-gray-500 mt-1">
-            The governance network behind Canada&apos;s public funding
-          </p>
+          <div className="flex items-center gap-3">
+            <Image src="/logo.jpg" alt="CivicGraph" width={40} height={40} className="rounded" />
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">CivicGraph</h1>
+              <p className="text-sm text-gray-500">
+                The governance network behind Canada&apos;s public funding
+              </p>
+            </div>
+          </div>
           <div className="mt-4">
             <SearchBox />
           </div>
