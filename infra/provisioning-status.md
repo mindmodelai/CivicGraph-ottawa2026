@@ -20,12 +20,21 @@ Account: 006193923397
 | Neptune SG | civicgraph-neptune-sg | sg-02f2190501cd229d1 | created | yes |
 | Lambda SG | civicgraph-lambda-sg | sg-01fed06d715bb8d6e | created | yes |
 | CDK bootstrap | CDKToolkit | n/a | bootstrapped | yes |
+| Lambda: top | civicgraph-top | arn:aws:lambda:us-west-2:006193923397:function:civicgraph-top | created | yes |
+| Lambda: search | civicgraph-search | arn:aws:lambda:us-west-2:006193923397:function:civicgraph-search | created | yes |
+| Lambda: person | civicgraph-person | arn:aws:lambda:us-west-2:006193923397:function:civicgraph-person | created | yes |
+| API Gateway | civicgraph-api (lpyurzgtdc) | arn:aws:apigateway:us-west-2::/restapis/lpyurzgtdc | deployed | yes |
+| VPC Endpoint: Bedrock | vpce-0383d78d31de3b807 | n/a | available | yes |
 
 ## Endpoints
 
 - Neptune writer endpoint: `civicgraph-graph.cluster-c5qoqo2omjl2.us-west-2.neptune.amazonaws.com:8182`
 - Neptune reader endpoint: `civicgraph-graph.cluster-ro-c5qoqo2omjl2.us-west-2.neptune.amazonaws.com:8182`
 - Staging bucket: `s3://civicgraph-staging-006193923397-us-west-2`
+- **API Gateway:** `https://lpyurzgtdc.execute-api.us-west-2.amazonaws.com/prod`
+  - GET `/api/top` → civicgraph-top Lambda
+  - GET `/api/search?q=` → civicgraph-search Lambda
+  - GET `/api/person/{id}` → civicgraph-person Lambda
 
 ## Networking
 

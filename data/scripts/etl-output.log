@@ -1,0 +1,34 @@
+=== Neptune Bulk Load Monitor ===
+Load ID: 71ff1f9b-3694-4f13-88a0-bb2de783b214
+Started monitoring: 2026-04-29T16:09:50Z
+
+[2026-04-29T16:09:50Z] status=LOAD_IN_PROGRESS records=0 insertErrors=0
+[2026-04-29T16:10:21Z] status=LOAD_IN_PROGRESS records=0 insertErrors=0
+[2026-04-29T16:10:51Z] status=LOAD_IN_PROGRESS records=0 insertErrors=0
+[2026-04-29T16:11:22Z] status=LOAD_IN_PROGRESS records=0 insertErrors=0
+[2026-04-29T16:11:52Z] status=LOAD_COMPLETED records=990334 insertErrors=0
+
+=== Final Status ===
+{
+    "status": "200 OK",
+    "payload": {
+        "feedCount": [
+            {
+                "LOAD_COMPLETED": 7
+            }
+        ],
+        "overallStatus": {
+            "fullUri": "s3://civicgraph-staging-006193923397-us-west-2/bulk-load/",
+            "runNumber": 1,
+            "retryNumber": 1,
+            "status": "LOAD_COMPLETED",
+            "totalTimeSpent": 107,
+            "startTime": 1777478975,
+            "totalRecords": 990334,
+            "totalDuplicates": 0,
+            "parsingErrors": 0,
+            "datatypeMismatchErrors": 0,
+            "insertErrors": 0
+        }
+    }
+}
