@@ -29,6 +29,16 @@ See docs/architecture.md and docs/api-contract.md for technical contracts.
   - **Bedrock smoke test:** Verify `us.anthropic.claude-sonnet-4-6` is callable from Lambda execution role before full deploy
   - **Done when:** (1) `curl <api-url>/api/top` returns valid TopResponse with 20 entries; (2) `curl <api-url>/api/person/<id>` returns PersonDetailResponse including a non-empty `narrative` string; (3) Bedrock smoke test passes; (4) API Gateway base URL committed to `infra/provisioning-status.md`
 
+- [ ] A-DEPLOY-WEB: Deploy apps/web/ to AWS Amplify Hosting in us-west-2
+  - Create an Amplify app pointed at GitHub repo `mindmodelai/CivicGraph-ottawa2026`, branch `main`, monorepo path `apps/web`
+  - Build settings: Next.js 14 App Router, Node 20, default amplify.yml (or write one if needed)
+  - Set environment variable `NEXT_PUBLIC_API_URL` initially to empty (frontend falls back to mocks)
+  - After API Gateway is deployed in Task 8, update `NEXT_PUBLIC_API_URL` to the public API URL and trigger a rebuild
+  - Capture the public Amplify domain (e.g. `https://main.<app-id>.amplifyapp.com`)
+  - Write the public URL to `infra/demo-url.txt` and commit
+  - All resources tagged `Project=civicgraph`, `AutoDelete=true`, region `us-west-2`
+  - **Done when:** Public Amplify URL renders Screen 1 with 20 entries from mocks, and Person detail pages render for p_001/p_002/p_003
+
 ## Kiro-CLI Laptop (Agent B) — apps/web/
 
 - [x] Task 3: Next.js scaffold + mock fixtures + shared types
@@ -53,3 +63,7 @@ See docs/architecture.md and docs/api-contract.md for technical contracts.
 Task 4 → Task 6 → Task 8 → Task 10 → Task 11 → Task 12
 
 Agent B is idle until Task 8 completes (API deploy). Agent C has no remaining solo tasks — available for scribe/orchestration support.
+
+## Orchestrator notes
+
+The frontend deploys via Amplify because the laptop's WSParticipantRole is locked down (no Amplify provisioning). Amplify must be created from the RDP role. Order of operations: Kiro-CLI-RDP creates the Amplify app and gets it building from main against mocks (fast — <10 min). Then Kiro-CLI-RDP finishes Lambda+API Gateway (Task 8). Then Kiro-CLI-RDP updates the Amplify env var with the API URL and redeploys.
