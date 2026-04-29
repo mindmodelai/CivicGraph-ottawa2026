@@ -10,7 +10,7 @@ Sync: `git pull --rebase` before edit, commit-push after. Prefix: `feat(api):`, 
 
 ---
 
-## Task 1: S3 data inventory + schema validation
+## Task 1: S3 data inventory + schema validation ✅ DONE
 - **Owner:** Agent C
 - **Time:** 10:00–10:30
 - **Depends on:** —
@@ -18,21 +18,21 @@ Sync: `git pull --rebase` before edit, commit-push after. Prefix: `feat(api):`, 
 - **Non-blocking:** Agent A starts Task 2 in parallel. If schema mismatches are found, Agent C notifies Agent A immediately.
 - **Done when:** `data/schema.md` committed with field-level schema for all JSONL files, row counts, and any mismatch notes.
 
-## Task 2: CDK scaffold + deploy Neptune + S3 staging
+## Task 2: CDK scaffold + deploy Neptune + S3 staging ✅ DONE
 - **Owner:** Agent A
 - **Time:** 10:00–10:45
 - **Depends on:** —
 - **Description:** Initialize CDK TypeScript project in `infra/`. Define stacks: NetworkStack (VPC), DataStack (Neptune Serverless 1–4 NCU + S3 staging bucket), AppStack (Lambda + API Gateway), WebStack (Amplify). Tag all resources `Project=civicgraph`, `AutoDelete=true`. Deploy NetworkStack + DataStack. Wait for Neptune `available` status.
 - **Done when:** `cdk synth` clean; Neptune cluster `civicgraph-graph` status is `available`; staging S3 bucket exists.
 
-## Task 3: Next.js scaffold + mock fixtures + shared types
+## Task 3: Next.js scaffold + mock fixtures + shared types 🔄 IN PROGRESS
 - **Owner:** Agent B
 - **Time:** 10:00–10:30
 - **Depends on:** —
 - **Description:** Initialize Next.js 14 in `apps/web/` with App Router, TypeScript, Tailwind. Install `cytoscape`, `react-cytoscapejs`, `cytoscape-cose-bilkent`. Create mock JSON fixtures from `docs/api-contract.md` (`mocks/top.json`, `mocks/person/p_001.json`). Create `lib/types.ts` with all shared TypeScript interfaces.
 - **Done when:** `npm run dev` serves localhost:3000; mocks parse; types compile.
 
-## Task 4: ETL: JSONL → Neptune bulk-load CSVs → bulk load
+## Task 4: ETL: JSONL → Neptune bulk-load CSVs → bulk load 🔄 IN PROGRESS
 - **Owner:** Agent A
 - **Time:** 10:30–11:15
 - **Depends on:** Task 1 (schema)
@@ -46,12 +46,12 @@ Sync: `git pull --rebase` before edit, commit-push after. Prefix: `feat(api):`, 
 - **Description:** Build `app/page.tsx` (Screen 1): ranked list from `mocks/top.json`. Components: SearchBox (stub), PersonRow. Tabular-nums for large numbers. Clickable rows link to `/person/{id}`.
 - **Done when:** Landing page renders 20 rows from mock data; clicking a row navigates to person detail route.
 
-## Task 6: Bedrock entity resolution batch + top-20 pre-compute
+## Task 6: Top-20 pre-compute (entity resolution via golden records)
 - **Owner:** Agent A
 - **Time:** 11:15–12:00
 - **Depends on:** Task 4
-- **Description:** Write `data/scripts/resolve.py`: query all Person vertices, group similar names (Levenshtein pre-filter), send batches to Bedrock `us.anthropic.claude-sonnet-4-6` for confidence scoring. Merge vertices with confidence >= 0.7 (store `aliases[]`, `confidence`). Cache results by SHA256 in S3. Then run the top-20 composite score query and write result to `s3://<staging>/cache/top.json`.
-- **Done when:** Entity resolution complete; `cache/top.json` exists with 20 entries matching TopResponse schema.
+- **Description:** Entity resolution is already done — `general/entity_golden_records.jsonl` has pre-resolved entities with aliases, LLM verdicts, and cross-dataset profiles. Skip `resolve.py`. Instead: run the composite score query (`boards × log10(1 + totalFunding)`) against Neptune, write result to `s3://civicgraph-staging-006193923397-us-west-2/cache/top.json` matching TopResponse schema.
+- **Done when:** `cache/top.json` exists with 20 entries matching TopResponse schema.
 
 ## Task 7: Screen 2 — Person detail + Cytoscape graph (mock data)
 - **Owner:** Agent B
@@ -74,7 +74,7 @@ Sync: `git pull --rebase` before edit, commit-push after. Prefix: `feat(api):`, 
   Deploy AppStack. Verify all 3 endpoints return contract-shape JSON.
 - **Done when:** `curl <api-url>/api/top` returns valid JSON; Bedrock smoke test passes; all 3 endpoints respond.
 
-## Task 9: Killer findings + docs/findings.md
+## Task 9: Killer findings + docs/findings.md ✅ DONE
 - **Owner:** Agent C
 - **Time:** 10:30–12:30
 - **Depends on:** Task 1

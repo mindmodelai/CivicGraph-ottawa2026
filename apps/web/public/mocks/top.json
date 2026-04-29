@@ -1,0 +1,25 @@
+{
+  "results": [
+    { "id": "p_001", "name": "Jane Doe", "province": "ON", "boards": 4, "totalFunding": 14237891, "compositeScore": 28.46 },
+    { "id": "p_002", "name": "John Smith", "province": "AB", "boards": 3, "totalFunding": 8120500, "compositeScore": 19.38 },
+    { "id": "p_003", "name": "Victoria Nalugwa", "province": "ON", "boards": 55, "totalFunding": 103575, "compositeScore": 275.84 },
+    { "id": "p_004", "name": "Gary Franken", "province": "BC", "boards": 43, "totalFunding": 15136240, "compositeScore": 308.74 },
+    { "id": "p_005", "name": "Paul Terrio", "province": "QC", "boards": 42, "totalFunding": 1265474, "compositeScore": 256.29 },
+    { "id": "p_006", "name": "Mikael Bingham", "province": "AB", "boards": 38, "totalFunding": 442316, "compositeScore": 214.54 },
+    { "id": "p_007", "name": "Sheila Britton", "province": "ON", "boards": 45, "totalFunding": 320000, "compositeScore": 247.50 },
+    { "id": "p_008", "name": "Melissa Cooke", "province": "BC", "boards": 32, "totalFunding": 127406658, "compositeScore": 259.37 },
+    { "id": "p_009", "name": "Brian MacDougall", "province": "NS", "boards": 33, "totalFunding": 89000000, "compositeScore": 262.10 },
+    { "id": "p_010", "name": "Janice Atwal", "province": "BC", "boards": 42, "totalFunding": 1265474, "compositeScore": 256.29 },
+    { "id": "p_011", "name": "Glenda Yeates", "province": "AB", "boards": 3, "totalFunding": 88532237487, "compositeScore": 32.73 },
+    { "id": "p_012", "name": "Jack Mintz", "province": "AB", "boards": 5, "totalFunding": 83448343891, "compositeScore": 54.55 },
+    { "id": "p_013", "name": "Jeff Potts", "province": "ON", "boards": 31, "totalFunding": 89564143, "compositeScore": 246.52 },
+    { "id": "p_014", "name": "Roger Dufresne", "province": "QC", "boards": 25, "totalFunding": 312762516, "compositeScore": 212.38 },
+    { "id": "p_015", "name": "Keith Richter", "province": "AB", "boards": 27, "totalFunding": 75680260, "compositeScore": 212.73 },
+    { "id": "p_016", "name": "Gary Hodder", "province": "NL", "boards": 28, "totalFunding": 75680260, "compositeScore": 220.61 },
+    { "id": "p_017", "name": "Wayne Williams", "province": "ON", "boards": 34, "totalFunding": 120630599, "compositeScore": 274.77 },
+    { "id": "p_018", "name": "Angela Fong", "province": "AB", "boards": 4, "totalFunding": 84838185791, "compositeScore": 43.68 },
+    { "id": "p_019", "name": "Trevor Young", "province": "ON", "boards": 15, "totalFunding": 30343217806, "compositeScore": 157.05 },
+    { "id": "p_020", "name": "Patricia Houston", "province": "ON", "boards": 8, "totalFunding": 24448068133, "compositeScore": 83.04 }
+  ],
+  "generatedAt": "2026-04-29T11:30:00Z"
+}

@@ -1,0 +1,37 @@
+{
+  "person": {
+    "id": "p_001",
+    "name": "Jane Doe",
+    "province": "ON",
+    "boards": 4,
+    "totalFunding": 14237891
+  },
+  "graph": {
+    "nodes": [
+      { "id": "p_001", "label": "Jane Doe", "type": "person" },
+      { "id": "o_001", "label": "Foundation A", "type": "org", "size": 5200000 },
+      { "id": "o_002", "label": "Charity B", "type": "org", "size": 4100000 },
+      { "id": "o_003", "label": "Society C", "type": "org", "size": 3000000 },
+      { "id": "o_004", "label": "Institute D", "type": "org", "size": 1937891 },
+      { "id": "g_fed_eccc", "label": "Environment Canada", "type": "gov" },
+      { "id": "g_ab_health", "label": "AB Health", "type": "gov" }
+    ],
+    "edges": [
+      { "source": "p_001", "target": "o_001", "edgeType": "SITS_ON", "role": "Director", "yearStart": 2020 },
+      { "source": "p_001", "target": "o_002", "edgeType": "SITS_ON", "role": "Chair", "yearStart": 2018 },
+      { "source": "p_001", "target": "o_003", "edgeType": "SITS_ON", "role": "Director", "yearStart": 2021 },
+      { "source": "p_001", "target": "o_004", "edgeType": "SITS_ON", "role": "Director", "yearStart": 2019 },
+      { "source": "g_fed_eccc", "target": "o_001", "edgeType": "FUNDED", "amount": 5200000, "fiscalYear": 2023, "program": "Environmental Damages Fund", "sourceFilingId": "fed_2023_eccc_5200", "sourceUrl": "https://search.open.canada.ca/grants/record/example" },
+      { "source": "g_fed_eccc", "target": "o_002", "edgeType": "FUNDED", "amount": 4100000, "fiscalYear": 2022, "sourceFilingId": "fed_2022_eccc_4100", "sourceUrl": "https://search.open.canada.ca/grants/record/example2" },
+      { "source": "g_ab_health", "target": "o_003", "edgeType": "FUNDED", "amount": 3000000, "fiscalYear": 2024, "sourceFilingId": "ab_2024_health_3000", "sourceUrl": "https://open.alberta.ca/grants/example" },
+      { "source": "g_ab_health", "target": "o_004", "edgeType": "FUNDED", "amount": 1937891, "fiscalYear": 2023, "sourceFilingId": "ab_2023_health_1938", "sourceUrl": "https://open.alberta.ca/grants/example2" }
+    ]
+  },
+  "provenance": [
+    { "id": "fed_2023_eccc_5200", "type": "fed_grant", "description": "ECCC contribution to Foundation A, FY2023", "url": "https://search.open.canada.ca/grants/record/example", "fiscalYear": 2023, "amount": 5200000 },
+    { "id": "fed_2022_eccc_4100", "type": "fed_grant", "description": "ECCC contribution to Charity B, FY2022", "url": "https://search.open.canada.ca/grants/record/example2", "fiscalYear": 2022, "amount": 4100000 },
+    { "id": "ab_2024_health_3000", "type": "ab_grant", "description": "AB Health grant to Society C, FY2024", "url": "https://open.alberta.ca/grants/example", "fiscalYear": 2024, "amount": 3000000 },
+    { "id": "ab_2023_health_1938", "type": "ab_grant", "description": "AB Health grant to Institute D, FY2023", "url": "https://open.alberta.ca/grants/example2", "fiscalYear": 2023, "amount": 1937891 }
+  ],
+  "narrative": "Jane Doe directs four organizations that collectively received $14.2M in public funding. The largest single source is Environment Canada, which contributed $9.3M across two organizations. This concentration of board seats and public funding across multiple entities may warrant further review."
+}
