@@ -1,0 +1,33 @@
+{
+  "person": {
+    "id": "p_002",
+    "name": "John Smith",
+    "province": "AB",
+    "boards": 3,
+    "totalFunding": 8120500
+  },
+  "graph": {
+    "nodes": [
+      { "id": "p_002", "label": "John Smith", "type": "person" },
+      { "id": "o_010", "label": "Alberta Health Foundation", "type": "org", "size": 4500000 },
+      { "id": "o_011", "label": "Prairie Youth Services", "type": "org", "size": 2200000 },
+      { "id": "o_012", "label": "Calgary Community Trust", "type": "org", "size": 1420500 },
+      { "id": "g_fed_hc", "label": "Health Canada", "type": "gov" },
+      { "id": "g_ab_cs", "label": "AB Community Services", "type": "gov" }
+    ],
+    "edges": [
+      { "source": "p_002", "target": "o_010", "edgeType": "SITS_ON", "role": "Director", "yearStart": 2019 },
+      { "source": "p_002", "target": "o_011", "edgeType": "SITS_ON", "role": "Chair", "yearStart": 2020 },
+      { "source": "p_002", "target": "o_012", "edgeType": "SITS_ON", "role": "Director", "yearStart": 2021 },
+      { "source": "g_fed_hc", "target": "o_010", "edgeType": "FUNDED", "amount": 4500000, "fiscalYear": 2023, "sourceFilingId": "fed_2023_hc_4500", "sourceUrl": "https://search.open.canada.ca/grants/record/example3" },
+      { "source": "g_ab_cs", "target": "o_011", "edgeType": "FUNDED", "amount": 2200000, "fiscalYear": 2023, "sourceFilingId": "ab_2023_cs_2200", "sourceUrl": "https://open.alberta.ca/grants/example3" },
+      { "source": "g_ab_cs", "target": "o_012", "edgeType": "FUNDED", "amount": 1420500, "fiscalYear": 2024, "sourceFilingId": "ab_2024_cs_1420", "sourceUrl": "https://open.alberta.ca/grants/example4" }
+    ]
+  },
+  "provenance": [
+    { "id": "fed_2023_hc_4500", "type": "fed_grant", "description": "Health Canada grant to Alberta Health Foundation, FY2023", "url": "https://search.open.canada.ca/grants/record/example3", "fiscalYear": 2023, "amount": 4500000 },
+    { "id": "ab_2023_cs_2200", "type": "ab_grant", "description": "AB Community Services grant to Prairie Youth Services, FY2023", "url": "https://open.alberta.ca/grants/example3", "fiscalYear": 2023, "amount": 2200000 },
+    { "id": "ab_2024_cs_1420", "type": "ab_grant", "description": "AB Community Services grant to Calgary Community Trust, FY2024", "url": "https://open.alberta.ca/grants/example4", "fiscalYear": 2024, "amount": 1420500 }
+  ],
+  "narrative": "John Smith serves on three Alberta-based boards that collectively received $8.1M in public funding. Health Canada is the largest single funder at $4.5M to Alberta Health Foundation. The remaining $3.6M flows through Alberta Community Services to two organizations."
+}

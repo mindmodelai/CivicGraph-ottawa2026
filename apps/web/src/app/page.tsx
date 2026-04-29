@@ -33,12 +33,12 @@ export default async function HomePage() {
       </header>
 
       <section className="max-w-4xl mx-auto px-4 py-6">
-        <div className="grid grid-cols-[3rem_1fr_4rem_8rem_5rem] gap-4 px-4 pb-2 text-xs font-medium text-gray-400 uppercase tracking-wider">
+        <div className="grid grid-cols-[2rem_1fr_3rem_6rem] sm:grid-cols-[3rem_1fr_4rem_8rem_5rem] gap-2 sm:gap-4 px-4 pb-2 text-xs font-medium text-gray-400 uppercase tracking-wider">
           <span className="text-right">#</span>
           <span>Name</span>
           <span className="text-right">Boards</span>
           <span className="text-right">Funding</span>
-          <span className="text-right">Score</span>
+          <span className="text-right hidden sm:block">Score</span>
         </div>
         <div className="border-t border-gray-200">
           {data.results.map((person, i) => (

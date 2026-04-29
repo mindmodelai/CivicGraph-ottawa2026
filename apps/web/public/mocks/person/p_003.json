@@ -1,0 +1,41 @@
+{
+  "person": {
+    "id": "p_003",
+    "name": "Victoria Nalugwa",
+    "province": "ON",
+    "boards": 55,
+    "totalFunding": 103575
+  },
+  "graph": {
+    "nodes": [
+      { "id": "p_003", "label": "Victoria Nalugwa", "type": "person" },
+      { "id": "o_020", "label": "Community Aid Network", "type": "org", "size": 25000 },
+      { "id": "o_021", "label": "Hope Foundation Ontario", "type": "org", "size": 18000 },
+      { "id": "o_022", "label": "Youth Empowerment Canada", "type": "org", "size": 22000 },
+      { "id": "o_023", "label": "New Horizons Society", "type": "org", "size": 15575 },
+      { "id": "o_024", "label": "Multicultural Services Inc.", "type": "org", "size": 23000 },
+      { "id": "g_fed_esdc", "label": "ESDC", "type": "gov" },
+      { "id": "g_fed_ircc", "label": "IRCC", "type": "gov" }
+    ],
+    "edges": [
+      { "source": "p_003", "target": "o_020", "edgeType": "SITS_ON", "role": "Director", "yearStart": 2018 },
+      { "source": "p_003", "target": "o_021", "edgeType": "SITS_ON", "role": "Director", "yearStart": 2019 },
+      { "source": "p_003", "target": "o_022", "edgeType": "SITS_ON", "role": "Chair", "yearStart": 2020 },
+      { "source": "p_003", "target": "o_023", "edgeType": "SITS_ON", "role": "Director", "yearStart": 2021 },
+      { "source": "p_003", "target": "o_024", "edgeType": "SITS_ON", "role": "Director", "yearStart": 2019 },
+      { "source": "g_fed_esdc", "target": "o_020", "edgeType": "FUNDED", "amount": 25000, "fiscalYear": 2023, "sourceFilingId": "fed_2023_esdc_25", "sourceUrl": "https://search.open.canada.ca/grants/record/example5" },
+      { "source": "g_fed_esdc", "target": "o_022", "edgeType": "FUNDED", "amount": 22000, "fiscalYear": 2023, "sourceFilingId": "fed_2023_esdc_22", "sourceUrl": "https://search.open.canada.ca/grants/record/example6" },
+      { "source": "g_fed_ircc", "target": "o_021", "edgeType": "FUNDED", "amount": 18000, "fiscalYear": 2024, "sourceFilingId": "fed_2024_ircc_18", "sourceUrl": "https://search.open.canada.ca/grants/record/example7" },
+      { "source": "g_fed_ircc", "target": "o_024", "edgeType": "FUNDED", "amount": 23000, "fiscalYear": 2023, "sourceFilingId": "fed_2023_ircc_23", "sourceUrl": "https://search.open.canada.ca/grants/record/example8" },
+      { "source": "g_fed_esdc", "target": "o_023", "edgeType": "FUNDED", "amount": 15575, "fiscalYear": 2024, "sourceFilingId": "fed_2024_esdc_15", "sourceUrl": "https://search.open.canada.ca/grants/record/example9" }
+    ]
+  },
+  "provenance": [
+    { "id": "fed_2023_esdc_25", "type": "fed_grant", "description": "ESDC grant to Community Aid Network, FY2023", "url": "https://search.open.canada.ca/grants/record/example5", "fiscalYear": 2023, "amount": 25000 },
+    { "id": "fed_2023_esdc_22", "type": "fed_grant", "description": "ESDC grant to Youth Empowerment Canada, FY2023", "url": "https://search.open.canada.ca/grants/record/example6", "fiscalYear": 2023, "amount": 22000 },
+    { "id": "fed_2024_ircc_18", "type": "fed_grant", "description": "IRCC grant to Hope Foundation Ontario, FY2024", "url": "https://search.open.canada.ca/grants/record/example7", "fiscalYear": 2024, "amount": 18000 },
+    { "id": "fed_2023_ircc_23", "type": "fed_grant", "description": "IRCC grant to Multicultural Services Inc., FY2023", "url": "https://search.open.canada.ca/grants/record/example8", "fiscalYear": 2023, "amount": 23000 },
+    { "id": "fed_2024_esdc_15", "type": "fed_grant", "description": "ESDC grant to New Horizons Society, FY2024", "url": "https://search.open.canada.ca/grants/record/example9", "fiscalYear": 2024, "amount": 15575 }
+  ],
+  "narrative": "Victoria Nalugwa appears on 55 distinct charity boards in CRA T3010 filings — an unusually high number. The five organizations shown here collectively received $103,575 in federal funding from ESDC and IRCC. While the per-organization amounts are modest, the breadth of board seats held by a single individual is a pattern worth investigating."
+}
