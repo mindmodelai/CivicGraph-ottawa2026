@@ -31,7 +31,7 @@ export default function HomePage() {
       <header className="border-b border-gray-200 bg-white sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 py-6">
           <div className="flex items-center gap-4">
-            <Image src="/logo.jpg" alt="CivicGraph" width={300} height={300} className="rounded w-16 h-16 sm:w-20 sm:h-20" />
+            <Image src="/logo.jpg" alt="CivicGraph" width={300} height={79} className="rounded" />
             <div>
               <h1 className="text-2xl font-bold text-gray-900">CivicGraph</h1>
               <p className="text-sm text-gray-500">
