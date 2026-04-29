@@ -4,6 +4,10 @@ import { formatCAD } from '@/lib/format';
 import ProvenanceChip from '@/components/ProvenanceChip';
 import PersonDetailClient from './client';
 
+export async function generateStaticParams() {
+  return [{ id: 'p_001' }, { id: 'p_002' }, { id: 'p_003' }];
+}
+
 async function getPersonData(id: string): Promise<PersonDetailResponse> {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   if (apiUrl) {
